@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Floating Section</title>
+    <style>
+        
+        body {
+            background-color: black; 
+            color: white; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white; 
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: gold; 
+            text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold;
+        }
+
+        
+        section {
+            position: relative;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: transparent; 
+            color: white; 
+            border: 2px solid transparent;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 
+                        0 0 40px rgba(0, 0, 255, 0.8),  
+                        0 0 60px rgba(0, 255, 0, 0.8),  
+                        0 0 80px rgba(255, 215, 0, 0.8), 
+                        0 0 100px rgba(128, 0, 128, 0.8); 
+            animation: neon-glow 10s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
+  }
+  10% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8),
+                0 0 40px rgba(255, 0, 0, 0.8),
+                0 0 60px rgba(255, 0, 0, 0.8),
+                0 0 80px rgba(255, 0, 0, 0.8),
+                0 0 100px rgba(255, 0, 0, 0.8); 
+  }
+  20% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8),
+                0 0 40px rgba(0, 255, 0, 0.8),
+                0 0 60px rgba(0, 255, 0, 0.8),
+                0 0 80px rgba(0, 255, 0, 0.8),
+                0 0 100px rgba(0, 255, 0, 0.8); 
+  }
+  30% {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.8),
+                0 0 40px rgba(0, 0, 255, 0.8),
+                0 0 60px rgba(0, 0, 255, 0.8),
+                0 0 80px rgba(0, 0, 255, 0.8),
+                0 0 100px rgba(0, 0, 255, 0.8); 
+  }
+  40% {
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8),
+                0 0 40px rgba(255, 255, 0, 0.8),
+                0 0 60px rgba(255, 255, 0, 0.8),
+                0 0 80px rgba(255, 255, 0, 0.8),
+                0 0 100px rgba(255, 255, 0, 0.8); 
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
+  }
+}
+
+
+.neon {
+  color: white; 
+  font-size: 48px; 
+  text-align: center; 
+  animation: neon-glow 1.5s infinite alternate; 
+}
+        
+        section {
+            display: none;
+        }
+
+        
+        section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('about')">About</a></li>
+            <li><a href="#" onclick="showSection('services')">Services</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to the Home Page</h1>
+        <p>My Name Is Mahlori Baloyi I am Business information technolgy Student at the University Of Johanessvurg.</p>
+        <p>I Am a First Year Student.</p>
+        <p>Lets get to know Me </p>
+    </section>
+
+    <section id="about">
+        <h1>About Us</h1>
+        <p>I Am An Intern at Prodigy InfoTech.</p>
+    </section>
+
+    <section id="services">
+        <h1>Our Services</h1>
+        <p>I Am an Aspiring software developer.</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p><li>Email:ringerofficial370@gmail.com</li>.</p>
+        <p><li>Phone:+27 72 551 9718</li>.</p>
+        <p><li>WhatsApp:0725519718</li>.</p>
+        <p><li>Linkdin:Mahlori Baloyi</li>.</p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+        window.onload = function() {
+            showSection();
+        };
+    </script>
+</body>
+</html>
+
